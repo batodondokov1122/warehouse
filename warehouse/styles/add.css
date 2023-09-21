@@ -1,0 +1,261 @@
+*{
+    margin: 0%;
+
+}
+html,
+body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;  
+    font-family: 'Inter var', sans-serif;
+}
+.disable-scroll{
+    overflow-y: hidden;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (min-width:1240px) {
+    .wrapper{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        background-color: #436EB2;
+    }
+
+            /* ==== Header ==== */
+    header{
+        width: fit-content;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #436EB2;
+    }
+    .menu_icon{
+        display: none;
+    }
+    .logo_icon{
+        width: 70px;
+        height: 70px;
+        padding-left: 20px;
+    }
+
+    /* ==== Hidden sidenav ==== */
+    .sidenav{
+        width: fit-content;
+        height: fit-content;
+        background-color: #436EB2;
+    }
+    .sidenav_header{
+        display: none;
+    }
+    .main_ul {
+        display: flex;
+        list-style-type:  none;
+        padding:  0;
+    }
+    .main_ul li{
+        position: relative;
+        width: fit-content;
+    }
+    .main_ul .li{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        cursor: pointer;
+    }
+    .sub_ul{
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        display: none;
+        list-style-type:  none;
+        padding: 0;
+    }
+    .main_ul  li:hover .sub_ul{
+        display: block;
+    } 
+    .closed{
+        display: none;
+    }
+    .sub_ul li{
+        width: auto;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: white;
+        background-color: #436EB2;
+        padding: 20px 20px;
+    }
+    .sub_ul  li:hover{
+        background-color: #1D2F4C;
+    } 
+}
+
+@media screen and (min-width:768px) and (max-width:1239px){
+    .wrapper{
+        display: flex;
+        flex-direction: column;  
+    }
+    /* ==== Header ==== */
+    header{
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        background-color: #436EB2;
+        padding: 0 20px;
+    }
+    .menu_icon{
+        width: 70px;
+        height: 70px;
+    }
+    .logo_icon{
+        width: 70px;
+        height: 70px;
+    }
+    
+    /* ==== Hidden sidenav ==== */
+    .sidenav{
+        min-width: 400px;
+        height: 100%;
+        background-color: #436EB2;
+        position: absolute;
+        text-align: left;
+        z-index: 1;
+        opacity: 0;
+        left: -500px;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+    .active{
+        opacity: 1;
+        left: 0px;
+        pointer-events: fill;
+    }
+    .sidenav_header{
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        padding-left: 20px;
+    }
+    .main_ul {
+        list-style-type:  none;
+        padding: 0;
+    }
+    .main_ul .li{
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px;
+        cursor: pointer;
+    }
+    .sub_ul{
+        list-style-type:  none;
+        padding: 0;
+    }
+    .closed{
+        display: none;
+    }
+    .sub_ul li{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: white;
+        background-color: #1D2F4C;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px;
+    }
+}
+
+/* ==== Main ==== */
+main{
+    flex:1 0 auto;  
+}
+
+/* ==== Breadcrumb ==== */
+ul.breadcrumb {
+    padding: 16px 20px;
+    list-style: none;
+    background-color: #eee;
+    font-size: 1rem;
+}
+ul.breadcrumb li {
+    display: inline;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* ==== Form ==== */
+form{
+    padding:  20px 20px;
+}
+.input_block{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.188rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+textarea{
+    font-family: 'Inter var', sans-serif;
+    font-weight: 500;
+    font-size: 0.938rem;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 15px;
+    resize: none;
+}
+.input_text{
+    width: 360px;
+    height: 36px;
+    border: 2px solid #000000;
+    padding: 0 15px;
+}
+.input_num{
+    width: 80px;
+    height: 36px;
+    border: 2px solid #000000;
+    padding: 0 15px;
+}
+.component_save_button{
+    width: 215px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.188rem;
+    color: #FFFFFF;
+    background: #436EB2;
+    border: 2px solid #000000;
+    cursor: pointer;
+}
+.errors{
+    padding: 16px 20px 0px 20px;
+    color: red;
+}
+
+
+/* === Footer === */
+footer{
+    flex: 0 0 auto;
+    padding: 30px 0;
+    font-size:1.188rem ;
+    text-align: center;
+}
